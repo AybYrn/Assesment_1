@@ -53,9 +53,9 @@ data = [
          " the top of the cake with more icing.",
          939, 5, "Dessert", "fudgecake.PNG"),
         ("Vegan millionaire's shortbread", "By Cassie Best",
-         "For the base\n150g cashew nuts - 50g rolled oat - 4 medjool dates, pitted- 50g coconut oil, melted - "
-         "\nFor the filling\n - 350g pitted medjool dates - 125ml unsweetened almond milk - 25ml maple syrup - "
-         "150g coconut oil - 1 tsp vanilla extract - \nFor the topping\n - 150g coconut oil - 5 tbsp cocoa powder "
+         ">> For the base\n150g cashew nuts - 50g rolled oat - 4 medjool dates, pitted- 50g coconut oil, melted - "
+         ">> For the filling - 350g pitted medjool dates - 125ml unsweetened almond milk - 25ml maple syrup - "
+         "150g coconut oil - 1 tsp vanilla extract - >> For the topping - 150g coconut oil - 5 tbsp cocoa powder "
          "- 2 tsp maple syrup",
          "STEP 1\nGrease a 20cm square cake tin and line with baking parchment. Tip the cashew nuts and oats into"
          " a food processer and blitz to crumbs. Add the dates and coconut oil, and blend again. Transfer to the"

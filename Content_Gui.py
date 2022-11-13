@@ -32,81 +32,66 @@ class Content_Gui:
 
     # def displayDishByRate():
 
-    def __init__(self, master):
+    def __init__(self, master, current_dish=0):
         self.master = master
+        self.current_dish = current_dish
         self.master.title("DISHES")
         bg_color = "#FF9AF6"
 
         # create a frame widget
-        self.frame_2 = tk.Frame(self.master, width=500, height=250, bg="#BA8BFF")
+        self.frame_2 = tk.Frame(self.master, bg="#BA8BFF")
         self.frame_2.pack(side=tk.TOP)
         self.frame_2.pack_propagate(False)
+
         from DishesData import data
-        dishName_label = tk.Label(self.frame_2,
-                                  text=data[0][0],
-                                  width=30,
-                                  bg="#BA8BFF",
-                                  fg="#D74F00",
-                                  font=("calibre", 15, "bold", "italic"))
-        dishName_label.grid(row=0, column=0, columnspan=2, padx=35, pady=5)
 
-        postedBy_label = tk.Label(self.frame_2,
-                                  text=data[0][1],
-                                  bg="#BA8BFF",
-                                  fg="white",
-                                  font=("calibre", 8, "bold"))
-        postedBy_label.grid(row=1, column=0, padx=35)
+        self.data = data
+        self.dishName_label = tk.Label(self.frame_2,
+                                       width=30,
+                                       height=3,
+                                       wraplength=300,
+                                       bg="#BA8BFF",
+                                       fg="#D74F00",
+                                       font=("calibre", 15, "bold", "italic"))
+        self.dishName_label.grid(row=0, column=0, columnspan=2, padx=35)
 
-        try:
-            # create a frame 1 widgets
-            print(data[4][7])
-            new_img = Image.open("./assets/" + data[0][7])
+        self.postedBy_label = tk.Label(self.frame_2,
+                                       bg="#BA8BFF",
+                                       fg="white",
+                                       wraplength=100,
+                                       height=3,
+                                       font=("calibre", 9, "bold"))
+        self.postedBy_label.grid(row=1, column=0, padx=35)
 
-            # Resize the image using resize() method
-            resize_image = new_img.resize((160, 150))
-            dish_img = ImageTk.PhotoImage(resize_image)
+        self.logo_widget = tk.Label(self.frame_2, bg="white")
+        self.logo_widget.grid(row=2, column=0, padx=15)
 
-            logo_widget = tk.Label(self.frame_2, image=dish_img, bg="white")
-            logo_widget.image = dish_img
-            logo_widget.grid(row=2, column=0)
-        except OSError:
-            print("ValueError exception thrown")
-
-        ings = data[0][2].split(" - ")
-        res = ""
-
-        for ing in ings:
-            res += ing + "\n"
-
-        ingredient_label = tk.Label(self.frame_2,
-                                    text="-------- Ingredients --------\n" + res,
-                                    bg="#BA8BFF",
-                                    fg="white",
-                                    font=("calibre", 10))
-        ingredient_label.grid(row=2, column=1, padx=10)
+        self.ingredient_label = tk.Label(self.frame_2,
+                                         bg="#BA8BFF",
+                                         fg="white",
+                                         width=40,
+                                         wraplength=250,
+                                         font=("calibre", 10))
+        self.ingredient_label.grid(row=2, column=1, padx=5)
 
         self.frame_3 = tk.Frame(self.frame_2, bg="#BA8BFF")
         self.frame_3.grid(row=3, column=0, columnspan=2)
 
-        instruction_label = tk.Text(self.frame_3,
-                                    height=10,
-                                    width=50,
-                                    bg="#BA8BFF",
-                                    fg="white",
-                                    state="normal",
-                                    font=("calibre", 10))
-        instruction_label.pack(side=tk.LEFT, padx=10, pady=5)
+        self.instruction_label = tk.Text(self.frame_3,
+                                         height=10,
+                                         width=60,
+                                         bg="#BA8BFF",
+                                         fg="white",
+                                         font=("calibre", 10))
+        self.instruction_label.pack(side=tk.LEFT, padx=10, pady=5)
 
         scroll_bar = tkinter.Scrollbar(self.frame_3,
                                        orient="vertical",
-                                       command=instruction_label.yview)
+                                       command=self.instruction_label.yview)
         # scroll_bar.set(10, 50)
         scroll_bar.pack(side=tk.LEFT, ipady=50)
 
-        instruction_label["yscrollcommand"] = scroll_bar.set
-
-        instruction_label.insert("1.0", data[3][3])
-        instruction_label.configure(state="disabled")
+        self.instruction_label["yscrollcommand"] = scroll_bar.set
 
         # create a frame widget
         self.frame_1 = tk.Frame(self.frame_2, width=500, height=500, bg="#BA8BFF")
@@ -127,8 +112,7 @@ class Content_Gui:
 
         search_entry = tk.Entry(self.frame_1,
                                 bg="white",
-                                font=("calibre", 10, "bold")
-                                )
+                                font=("calibre", 10, "bold"))
         search_entry.grid(row=0, column=1, padx=10, pady=5)
 
         searchRate_button = tk.Button(self.frame_1,
@@ -197,7 +181,7 @@ class Content_Gui:
                                     cursor="hand2",
                                     activeforeground="#2B00FF",
                                     activebackground="#D7CEFF",
-                                    # command=self.displayPrevious
+                                    command=self.displayPrevious
                                     )
         previous_button.pack(side=tk.LEFT, pady=15)
 
@@ -209,7 +193,7 @@ class Content_Gui:
                                 cursor="hand2",
                                 activeforeground="#2B00FF",
                                 activebackground="#D7CEFF",
-                                # command=self.displayNext
+                                command=self.displayNext
                                 )
         next_button.pack(side=tk.LEFT)
 
@@ -225,6 +209,56 @@ class Content_Gui:
                                   )
 
         insert_button.pack(side=tk.LEFT, padx=35, pady=20)
+
+        self.updateDishes()
+
+    def displayPrevious(self):
+        if self.current_dish > 0:
+            self.current_dish -= 1
+            self.updateDishes()
+
+    def displayNext(self):
+        number_of_data = len(self.data)
+        if self.current_dish < number_of_data - 1:
+            self.current_dish += 1
+            self.updateDishes()
+
+    def updateDishes(self):
+        self.dishName_label.config(
+            text=self.data[self.current_dish][0]
+        )
+        self.postedBy_label.config(
+            text=self.data[self.current_dish][1]
+        )
+
+        ingredients = self.data[self.current_dish][2].split(" - ")
+        res = ""
+        for ing in ingredients:
+            res += "\n" + ing
+
+        self.ingredient_label.config(
+            text="-------- Ingredients --------" + res
+        )
+
+        self.instruction_label.configure(state="normal")
+        self.instruction_label.insert(
+            "1.0", self.data[self.current_dish][3]
+        )
+        self.instruction_label.configure(state="disabled")
+
+        try:
+            # create a frame 1 widgets
+            new_img = Image.open("./assets/" + self.data[self.current_dish][7])
+
+            # Resize the image using resize() method
+            resize_image = new_img.resize((160, 150))
+
+            dish_img = ImageTk.PhotoImage(resize_image)
+
+            self.logo_widget.configure(image=dish_img)
+            self.logo_widget.image = dish_img
+        except OSError:
+            print("Picture Not Found ın the Assets folder")
 
     def pageInsert(self):
         self.frame_2.destroy()
