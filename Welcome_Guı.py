@@ -17,7 +17,7 @@ class Welcome_Gui:
 
         try:
             # create a frame 1 widgets
-            new_img = Image.open("assets/CookingBoo.png")
+            new_img = Image.open("assets/CookingBook.png")
 
             # Resize the image using resize() method
             resize_image = new_img.resize((150, 150))

@@ -25,7 +25,7 @@ class GUI_Insert:
 
         title_entry = tk.Entry(self.frame_2,
                                width=16,
-                               bg="lightgray",
+                               bg="white",
                                font=("calibre", 10, "bold"))
         title_entry.grid(row=1, column=1)
 
@@ -39,7 +39,7 @@ class GUI_Insert:
         ingredient_text = tk.Text(self.frame_2,
                                   width=20,
                                   height=5,
-                                  bg="lightgray",
+                                  bg="white",
                                   font=("calibre", 10, "bold"))
         ingredient_text.grid(row=2, column=1, padx=35, pady=20)
 
@@ -53,7 +53,7 @@ class GUI_Insert:
         instruction_text = tk.Text(self.frame_2,
                                    width=20,
                                    height=5,
-                                   bg="lightgray",
+                                   bg="white",
                                    font=("calibre", 10, "bold"))
         instruction_text.grid(row=3, column=1, padx=35, pady=20)
 
@@ -80,7 +80,7 @@ class GUI_Insert:
         name_label.grid(row=6, column=0, padx=35, pady=20)
 
         name_entry = tk.Entry(self.frame_2,
-                              bg="lightgray",
+                              bg="white",
                               font=("calibre", 10, "bold"))
         name_entry.grid(row=6, column=1)
 
