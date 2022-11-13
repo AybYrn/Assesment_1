@@ -1,3 +1,4 @@
+import tkinter
 import tkinter as tk
 from tkinter import W, E
 from PIL import Image, ImageTk
@@ -47,7 +48,7 @@ class Content_Gui:
                                   bg="#BA8BFF",
                                   fg="#D74F00",
                                   font=("calibre", 15, "bold", "italic"))
-        dishName_label.grid(row=0, column=0, columnspan=2, padx=35, pady=10)
+        dishName_label.grid(row=0, column=0, columnspan=2, padx=35, pady=5)
 
         postedBy_label = tk.Label(self.frame_2,
                                   text=data[0][1],
@@ -82,20 +83,34 @@ class Content_Gui:
                                     bg="#BA8BFF",
                                     fg="white",
                                     font=("calibre", 10))
-        ingredient_label.grid(row=2, column=1, padx=10, pady=10)
+        ingredient_label.grid(row=2, column=1, padx=10)
 
-        instruction_label = tk.Text(self.frame_2,
+        self.frame_3 = tk.Frame(self.frame_2, bg="#BA8BFF")
+        self.frame_3.grid(row=3, column=0, columnspan=2)
+
+        instruction_label = tk.Text(self.frame_3,
+                                    height=10,
+                                    width=50,
                                     bg="#BA8BFF",
                                     fg="white",
+                                    state="normal",
                                     font=("calibre", 10))
-        instruction_label.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
+        instruction_label.pack(side=tk.LEFT, padx=10, pady=5)
 
-        # instruction_label.insert(data[0][3])
+        scroll_bar = tkinter.Scrollbar(self.frame_3,
+                                       orient="vertical",
+                                       command=instruction_label.yview)
+        # scroll_bar.set(10, 50)
+        scroll_bar.pack(side=tk.LEFT, ipady=50)
+
+        instruction_label["yscrollcommand"] = scroll_bar.set
+
+        instruction_label.insert("1.0", data[3][3])
+        instruction_label.configure(state="disabled")
 
         # create a frame widget
-        self.frame_1 = tk.Frame(self.master, width=500, height=500, bg="#BA8BFF")
-        self.frame_1.pack()
-        self.frame_1.pack_propagate(False)
+        self.frame_1 = tk.Frame(self.frame_2, width=500, height=500, bg="#BA8BFF")
+        self.frame_1.grid(row=4, column=0, columnspan=2)
 
         searchName_button = tk.Button(self.frame_1,
                                       text="Display a Dish by Name",
@@ -162,7 +177,7 @@ class Content_Gui:
                                      text="Display All Dish",
                                      font=("Helvetica", 10, "bold"),
                                      bg=bg_color,
-                                     width=48,
+                                     width=49,
                                      fg="white",
                                      cursor="hand2",
                                      activeforeground="#2B00FF",
@@ -171,7 +186,34 @@ class Content_Gui:
                                      )
         searchAll_button.grid(row=3, columnspan=2, padx=20, sticky=W + E)
 
-        insert_button = tk.Button(self.frame_1,
+        self.frame_4 = tk.Frame(self.frame_2, bg="#BA8BFF")
+        self.frame_4.grid(row=5, column=0, columnspan=2, padx=35)
+
+        previous_button = tk.Button(self.frame_4,
+                                    text="<< Previous",
+                                    font=("Helvetica", 10, "bold"),
+                                    bg=bg_color,
+                                    fg="white",
+                                    cursor="hand2",
+                                    activeforeground="#2B00FF",
+                                    activebackground="#D7CEFF",
+                                    # command=self.displayPrevious
+                                    )
+        previous_button.pack(side=tk.LEFT, pady=15)
+
+        next_button = tk.Button(self.frame_4,
+                                text="Next >>",
+                                font=("Helvetica", 10, "bold"),
+                                bg=bg_color,
+                                fg="white",
+                                cursor="hand2",
+                                activeforeground="#2B00FF",
+                                activebackground="#D7CEFF",
+                                # command=self.displayNext
+                                )
+        next_button.pack(side=tk.LEFT)
+
+        insert_button = tk.Button(self.frame_4,
                                   text="Insert a Dish >>",
                                   font=("Helvetica", 10, "bold"),
                                   bg="white",
@@ -182,8 +224,8 @@ class Content_Gui:
                                   command=lambda: self.pageInsert()
                                   )
 
-        insert_button.grid(row=4, columnspan=2, padx=35, pady=20)
+        insert_button.pack(side=tk.LEFT, padx=35, pady=20)
 
     def pageInsert(self):
-        self.frame_1.destroy()
+        self.frame_2.destroy()
         GUI_Insert(self.master)
