@@ -241,6 +241,7 @@ class Content_Gui:
         )
 
         self.instruction_label.configure(state="normal")
+        self.instruction_label.delete("1.0", tk.END)
         self.instruction_label.insert(
             "1.0", self.data[self.current_dish][3]
         )
