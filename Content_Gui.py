@@ -1,40 +1,33 @@
 import tkinter
 import tkinter as tk
+from sqlite3 import Connection
 from tkinter import W, E
 from PIL import Image, ImageTk
+
+from Display_dishes import DisplayDishes
 from GUI_Insert import GUI_Insert
 import sqlite3
 
 
 class Content_Gui:
-    # @staticmethod
-    # def fetch_db():
-    #     connection = sqlite3.connect("./data/dishes.db")
-    #     cursor = connection.cursor()
-    #
-    #     try:
-    #         cursor.execute(
-    #             "CREATE TABLE "
-    #             "Dishes(NameOfDish, PostedBy, Ingredient, Instructions, numOfRates, AvgRate, Type, PhotoLocation)")
-    #
-    #         # Name of Dish, Who upload, Ingredient, Instructions, Number of rates, Avg rate, Type, photo
-
-    #         cursor.executemany("INSERT INTO Dishes VALUES(?, ?, ?, ?, ?, ?, ?, ?)", data)
-    #         connection.commit()
-    #     except:
-    #         print("Dishes Table already exists")
 
     # def displayDishByName():
 
-    # def displayAllDishes():
-
     # def displayDishByType():
-
+    #
     # def displayDishByRate():
 
-    def __init__(self, master, current_dish=0):
+    def __init__(self, master, connection: Connection, current_dish=0):
         self.master = master
+        self.connection = connection
         self.current_dish = current_dish
+
+        def displayAllDishes():
+            cursor = connection.cursor()
+            res = cursor.execute("SELECT * FROM DISHES")
+            self.frame_2.destroy()
+            DisplayDishes(self.master, res.fetchall())
+
         self.master.title("DISHES")
         bg_color = "#FF9AF6"
 
@@ -44,8 +37,8 @@ class Content_Gui:
         self.frame_2.pack_propagate(False)
 
         from DishesData import data
-
         self.data = data
+
         self.dishName_label = tk.Label(self.frame_2,
                                        width=30,
                                        height=3,
@@ -166,7 +159,7 @@ class Content_Gui:
                                      cursor="hand2",
                                      activeforeground="#2B00FF",
                                      activebackground="#D7CEFF",
-                                     # command=self.displayAllDishes
+                                     command=displayAllDishes
                                      )
         searchAll_button.grid(row=3, columnspan=2, padx=20, sticky=W + E)
 
@@ -263,4 +256,4 @@ class Content_Gui:
 
     def pageInsert(self):
         self.frame_2.destroy()
-        GUI_Insert(self.master)
+        GUI_Insert(self.master, self.connection)

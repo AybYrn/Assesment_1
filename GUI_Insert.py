@@ -1,4 +1,5 @@
 import tkinter as tk
+from sqlite3 import Connection
 from tkinter import W, E
 from tkinter import filedialog
 from tkinter.filedialog import askopenfile
@@ -6,8 +7,9 @@ from PIL import Image, ImageTk
 
 
 class GUI_Insert:
-    def __init__(self, master):
+    def __init__(self, master, connection: Connection):
         self.master = master
+        self.connection = connection
         self.master.title("INSERT A DISH TO THE BOOK")
         bg_color = "#BA8BFF"
 

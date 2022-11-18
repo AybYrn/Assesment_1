@@ -1,7 +1,27 @@
+import sqlite3
 import tkinter as tk
 from PIL import Image, ImageTk
-
 from Content_Gui import Content_Gui
+
+
+def fetch_db():
+    connection = sqlite3.connect("./data/dishes.db")
+    cursor = connection.cursor()
+    from DishesData import data
+
+    try:
+        # Name of Dish, Who upload, Ingredient, Instructions, Number of rates, Avg rate, Type, photo
+        cursor.execute(
+            "CREATE TABLE IF NOT EXISTS "
+            "Dishes(NameOfDish, PostedBy, Ingredient, Instructions, numOfRates, AvgRate, Type, PhotoLocation)")
+
+        cursor.executemany("INSERT INTO Dishes VALUES(?, ?, ?, ?, ?, ?, ?, ?)", data)
+        connection.commit()
+
+        return connection
+
+    except:
+        print("Dishes Table already exists")
 
 
 class Welcome_Gui:
@@ -49,7 +69,7 @@ class Welcome_Gui:
 
     def pageContent(self):
         self.frame_1.destroy()
-        Content_Gui(self.master)
+        Content_Gui(self.master, fetch_db())
 
 
 def main():

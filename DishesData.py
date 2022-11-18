@@ -53,7 +53,7 @@ data = [
          " the top of the cake with more icing.",
          939, 5, "Dessert", "fudgecake.PNG"),
         ("Vegan millionaire's shortbread", "By Cassie Best",
-         ">> For the base\n150g cashew nuts - 50g rolled oat - 4 medjool dates, pitted- 50g coconut oil, melted - "
+         ">> For the base\n150g cash ew nuts - 50g rolled oat - 4 medjool dates, pitted- 50g coconut oil, melted - "
          ">> For the filling - 350g pitted medjool dates - 125ml unsweetened almond milk - 25ml maple syrup - "
          "150g coconut oil - 1 tsp vanilla extract - >> For the topping - 150g coconut oil - 5 tbsp cocoa powder "
          "- 2 tsp maple syrup",
