@@ -10,9 +10,12 @@ def fetch_db():
     from DishesData import data
 
     try:
+        cursor.execute("DROP TABLE DISHES")
+
         # Name of Dish, Who upload, Ingredient, Instructions, Number of rates, Avg rate, Type, photo
+
         cursor.execute(
-            "CREATE TABLE IF NOT EXISTS "
+            "CREATE TABLE "
             "Dishes(NameOfDish, PostedBy, Ingredient, Instructions, numOfRates, AvgRate, Type, PhotoLocation)")
 
         cursor.executemany("INSERT INTO Dishes VALUES(?, ?, ?, ?, ?, ?, ?, ?)", data)

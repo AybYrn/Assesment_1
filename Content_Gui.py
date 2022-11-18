@@ -10,23 +10,10 @@ import sqlite3
 
 
 class Content_Gui:
-
-    # def displayDishByName():
-
-    # def displayDishByType():
-    #
-    # def displayDishByRate():
-
     def __init__(self, master, connection: Connection, current_dish=0):
         self.master = master
         self.connection = connection
         self.current_dish = current_dish
-
-        def displayAllDishes():
-            cursor = connection.cursor()
-            res = cursor.execute("SELECT * FROM DISHES")
-            self.frame_2.destroy()
-            DisplayDishes(self.master, res.fetchall())
 
         self.master.title("DISHES")
         bg_color = "#FF9AF6"
@@ -99,14 +86,22 @@ class Content_Gui:
                                       cursor="hand2",
                                       activeforeground="#2B00FF",
                                       activebackground="#D7CEFF",
-                                      # command=self.displayDishByName()
+                                      command=self.displayDishByName
                                       )
         searchName_button.grid(row=0, column=0, padx=10, pady=5)
 
-        search_entry = tk.Entry(self.frame_1,
-                                bg="white",
-                                font=("calibre", 10, "bold"))
-        search_entry.grid(row=0, column=1, padx=10, pady=5)
+        self.search_entry = tk.Entry(self.frame_1,
+                                     bg="white",
+                                     font=("calibre", 10, "bold"))
+        self.search_entry.grid(row=0, column=1, padx=10, pady=5)
+
+        self.rateTypeVar = tk.StringVar()
+        rating = [1, 2, 3, 4, 5]
+        cb1 = tk.OptionMenu(self.frame_1, self.rateTypeVar, *rating)
+        self.rateTypeVar.set("Choose a rate!")
+
+        cb1.config(bg="#FF9AF6", fg="white", width=16, cursor="hand2", )
+        cb1.grid(row=1, column=1, padx=10, pady=5)
 
         searchRate_button = tk.Button(self.frame_1,
                                       text="Display a Dish by Rate >>",
@@ -117,17 +112,16 @@ class Content_Gui:
                                       cursor="hand2",
                                       activeforeground="#2B00FF",
                                       activebackground="#D7CEFF",
-                                      # command=self.displayDishByRate()
+                                      command=self.displayDishByRate
                                       )
         searchRate_button.grid(row=1, column=0, padx=10, pady=5)
 
-        rating = ['1', '2', '3', '4', '5']
-        rateTypeVar = tk.StringVar()
-        rateTypeVar.set("Choose a rate!")
-        cb1 = tk.OptionMenu(self.frame_1, rateTypeVar, *rating)
+        typedish = ['Dessert', 'Starter', 'Main', 'Drink', 'Side']
+        self.typeVar = tk.StringVar()
+        self.typeVar.set("Choose a Type!")
+        cb1 = tk.OptionMenu(self.frame_1, self.typeVar, *typedish)
         cb1.config(bg="#FF9AF6", fg="white", width=16, cursor="hand2", )
-        cb1["menu"].config(bg="#FF9AF6")
-        cb1.grid(row=1, column=1, padx=10, pady=5)
+        cb1.grid(row=2, column=1, padx=10, pady=5)
 
         searchRate_button = tk.Button(self.frame_1,
                                       text="Display a Dish by Type",
@@ -138,17 +132,9 @@ class Content_Gui:
                                       cursor="hand2",
                                       activeforeground="#2B00FF",
                                       activebackground="#D7CEFF",
-                                      # command=self.displayDishByType()
+                                      command=self.displayDishByType
                                       )
         searchRate_button.grid(row=2, column=0, padx=10, pady=5)
-
-        rating = ['Dessert', 'Starter', 'Main', 'Drink', 'Side']
-        rateTypeVar = tk.StringVar()
-        rateTypeVar.set("Choose a Type!")
-        cb1 = tk.OptionMenu(self.frame_1, rateTypeVar, *rating)
-        cb1.config(bg="#FF9AF6", fg="white", width=16, cursor="hand2", )
-        cb1["menu"].config(bg="#FF9AF6")
-        cb1.grid(row=2, column=1, padx=10, pady=5)
 
         searchAll_button = tk.Button(self.frame_1,
                                      text="Display All Dish",
@@ -159,7 +145,7 @@ class Content_Gui:
                                      cursor="hand2",
                                      activeforeground="#2B00FF",
                                      activebackground="#D7CEFF",
-                                     command=displayAllDishes
+                                     command=self.displayAllDishes
                                      )
         searchAll_button.grid(row=3, columnspan=2, padx=20, sticky=W + E)
 
@@ -257,3 +243,31 @@ class Content_Gui:
     def pageInsert(self):
         self.frame_2.destroy()
         GUI_Insert(self.master, self.connection)
+
+    def displayDishByRate(self):
+        rate = str(self.rateTypeVar.get())
+        cursor = self.connection.cursor()
+        res = cursor.execute("SELECT * FROM DISHES WHERE AvgRate = " + rate)
+        self.frame_2.destroy()
+        DisplayDishes(self.master, res.fetchall(), self.connection)
+
+    def displayAllDishes(self):
+        cursor = self.connection.cursor()
+        res = cursor.execute("SELECT * FROM DISHES")
+        self.frame_2.destroy()
+        DisplayDishes(self.master, res.fetchall(), self.connection)
+
+    def displayDishByType(self):
+        types = str(self.typeVar.get())
+        cursor = self.connection.cursor()
+        res = cursor.execute("SELECT * FROM DISHES WHERE Type =" + "\'" + types + "\'")
+        # LIKE " + "`%types%`"
+        self.frame_2.destroy()
+        DisplayDishes(self.master, res.fetchall(), self.connection)
+
+    def displayDishByName(self):
+        name = self.search_entry.get()
+        cursor = self.connection.cursor()
+        res = cursor.execute("SELECT * FROM DISHES WHERE NameOfDish LIKE '%" + name + "%'")
+        self.frame_2.destroy()
+        DisplayDishes(self.master, res.fetchall(), self.connection)
