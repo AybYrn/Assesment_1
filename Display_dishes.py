@@ -30,8 +30,11 @@ class DisplayDishes:
 
     def display(self):
         self.frame_2.destroy()
+        self.frame_3.destroy()
         self.frame_2 = tk.Frame(self.frame_1, bg=bg_color)
         self.frame_2.grid(row=0, column=0)
+        self.frame_3 = tk.Frame(self.frame_1, bg=bg_color)
+        self.frame_3.grid(row=self.page_dish_count + 1, columnspan=2)
 
         last = (self.page - 1) * self.page_dish_count + self.page_dish_count
         for index, dish in enumerate(self.disharr[

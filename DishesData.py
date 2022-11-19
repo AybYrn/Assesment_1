@@ -1,5 +1,5 @@
 data = [
-        ("TChorizo & mozzarella gnocchi bake", "By Marianne Turner",
+        ("TChorizo & mozzarella gnocchi bake", "Marianne Turner",
          "1 tbsp olive oil - 1 onion, finely chopped - 2 garlic cloves, crushed - 120g chorizo, diced - 2 x 400g "
          "cans chopped tomatoes - 1 tsp caster sugar - 600g fresh gnocchi - 125g mozzarella ball, cut into chunks "
          "- small bunch of basil, torn - green salad, to serve",
@@ -11,7 +11,7 @@ data = [
          "then grill for 3 mins, or until the cheese is melted and golden. Season, scatter over the remaining "
          "basil and serve with green salad.",
          483, 5, "Main", "gnocchi.PNG"),
-        ("Smoked salmon & lemon risotto", "By Good Food team",
+        ("Smoked salmon & lemon risotto", "Good Food team",
          "1 onion, finely chopped - 2 tbsp olive oil - 350g risotto rice, such as Arborio - 1 garlic clove, finely"
          " chopped - 1 ½l boiling vegetable stock - 170g pack smoked salmon, three-quarters chopped - 85g "
          "mascarpone lite - 3 tbsp flat-leaf parsley, chopped - grated lemon zest, plus squeeze of juice - handful "
@@ -25,7 +25,7 @@ data = [
          " 5 mins to settle, then taste and add a little lemon juice if you like. Serve topped with reserved salmon"
          " (roughly torn) and some rocket.",
          269, 4, "Main", "salmonlemonrisotto.PNG"),
-        ("Smoked trout, beetroot & horseradish flatbread", "By Good Food team",
+        ("Smoked trout, beetroot & horseradish flatbread", "Good Food team",
          "4 flatbreads - olive oil, for brushing - 2 tbsp creamed horseradish - 2 tbsp crème fraîche - small bunch"
          " dill, ½ chopped, ½ picked into small fronds - squeeze lemon juice, plus a pinch of zest - 3 cooked"
          " beetroot (not in vinegar), very thinly sliced - 4 smoked trout fillets, broken into large flakes - "
@@ -38,7 +38,7 @@ data = [
          " if you like.",
          2, 1, "Main", "beetrootflatbread.PNG"),
 
-        ("Easy chocolate fudge cake", "By Member recipe by misskay",
+        ("Easy chocolate fudge cake", "Member recipe by misskay",
          "150ml sunflower oil, plus extra for the tin - 175g self-raising flour - 2 tbsp cocoa  - 1 tsp bicarbonate"
          "of soda - 150g caster sugar - 2 tbsp golden syrup - 2 large eggs, lightly beaten - 150ml semi-skimmed "
          "milk - 100g unsalted butter - 225g icing sugar - 40g cocoa powder - 2½ tbsp milk",
@@ -52,10 +52,10 @@ data = [
          " and spreadable.\nSTEP 5\nSandwich the two cakes together with the butter icing and cover the sides and"
          " the top of the cake with more icing.",
          939, 5, "Dessert", "fudgecake.PNG"),
-        ("Vegan millionaire's shortbread", "By Cassie Best",
-         ">> For the base\n150g cash ew nuts - 50g rolled oat - 4 medjool dates, pitted- 50g coconut oil, melted - "
-         ">> For the filling - 350g pitted medjool dates - 125ml unsweetened almond milk - 25ml maple syrup - "
-         "150g coconut oil - 1 tsp vanilla extract - >> For the topping - 150g coconut oil - 5 tbsp cocoa powder "
+        ("Vegan millionaire's shortbread", "Cassie Best",
+         ">> For the base 150g cash ew nuts - 50g rolled oat - 4 medjool dates, pitted- 50g coconut oil, melted - "
+         ">> For the filling 350g pitted medjool dates - 125ml unsweetened almond milk - 25ml maple syrup - "
+         "150g coconut oil - 1 tsp vanilla extract - >> For the topping 150g coconut oil - 5 tbsp cocoa powder "
          "- 2 tsp maple syrup",
          "STEP 1\nGrease a 20cm square cake tin and line with baking parchment. Tip the cashew nuts and oats into"
          " a food processer and blitz to crumbs. Add the dates and coconut oil, and blend again. Transfer to the"
@@ -70,7 +70,7 @@ data = [
          " no lumps. Cool for 10 mins, pour over the caramel layer and return to the fridge for at least 3 hrs or "
          "until firmly set. To serve, cut into squares.",
          36, 4, "Dessert", "veganshortbread.PNG"),
-        ("Ginger biscuits", "By Liberty Mendez",
+        ("Ginger biscuits", "Liberty Mendez",
          "100g salted butter, cubed - 75g light brown soft sugar - 1 tbsp grated fresh ginger - 100g golden syrup "
          "- 250g self-raising flour - 1½ tbsp ground ginger - 1 tsp bicarbonate of soda - 1 small egg yolk, beaten",
          "STEP 1\nHeat the oven to 190C/170C fan/gas 5. Line two large baking trays with baking parchment. In a "
@@ -82,7 +82,7 @@ data = [
          "to a cooling rack to cool completely.",
          161, 5, "Dessert", "gingerbiscuit.PNG"),
 
-        ("Super berry smoothie", "By Good Food team",
+        ("Super berry smoothie", "Good Food team",
          "450g bag frozen berry - 450g pot fat-free strawberry yogurt - 100ml milk - 25g porridge oat - 2 tsp honey"
          , "Whizz the berries, yogurt and milk together with a stick blender until smooth. Stir through the "
            "porridge oats, then pour into 4 glasses and serve with a drizzle of honey, if you like.",
@@ -94,7 +94,7 @@ data = [
          "a tall glass and serve.",
          20, 3, "Drink", "peanutsmoothie.PNG"),
 
-        ("Miso & butternut soup", "By Sara Buenfeld",
+        ("Miso & butternut soup", "Sara Buenfeld",
          "2 tsp rapeseed oil - 1 large onion, chopped - 400g butternut squash, skin-on, cut into chunks - 2 garlic"
          " cloves, chopped - 210g can butter beans, drained - 2 tsp vegetable bouillon - 80g shredded kale, finely"
          " chopped - 2 tsp sesame oil - 2 tsp toasted sesame seeds - 2 tsp finely grated ginger - 1 tbsp brown"
@@ -105,7 +105,7 @@ data = [
          " together with the sesame oil, seeds and ginger.\nSTEP 3\nAdd the miso to the soup, then blitz until "
          "smooth using a hand blender. Pour into bowls and top with the sesame kale mix to serve.",
          87, 5, "Starter", "misosoup.PNG"),
-        ("Cauliflower soup", "By Esther Clark",
+        ("Cauliflower soup", "Esther Clark",
          "1 large cauliflower (1.5kg), cut into florets - ½ tbsp ground cumin - 2 tbsp olive oil, plus extra"
          " for drizzling - 4 thyme sprigs - 1 onion, finely chopped - 1 celery stick, finely chopped - 1 garlic"
          " clove, crushed - 750-850ml veg or chicken stock - 100ml single cream - ½ small bunch of parsley, "
@@ -120,7 +120,7 @@ data = [
          " and top with the parsley, reserved cauliflower and an extra drizzle of olive oil.",
          3, 3, "Starter", "cauliflowersoup.PNG"),
 
-        ("Air fryer sweet potato fries", "By Samuel Goldsmith",
+        ("Air fryer sweet potato fries", "Samuel Goldsmith",
          "2 sweet potatoes - 1 tsp olive oil - For the seasoning - 1 tsp sweet smoked paprika or other seasonings"
          " such as Cajun seasoning, BBQ seasoning or garlic granules - ½ tsp mixed herbs.",
          "STEP 1\nPeel the sweet potatoes and slice into ½ cm sticks. Put in a bowl, drizzle over the oil and give"
@@ -130,7 +130,7 @@ data = [
          " little shake or toss after 5 mins. Once all the batches have cooked, return the fries to the air fryer,"
          " give it a good shake and cook for a further 1-2 mins to heat through.",
          4, 2, "Side", "sweetpotatofries.PNG"),
-        ("Chestnut hummus", "By Barney Desmazery",
+        ("Chestnut hummus", "Barney Desmazery",
          "180g vacuum-packed cooked chestnuts - 1 lemon, juiced - 1 garlic clove - 4 tbsp olive oil - pitta crisps"
          " and vegetable crudités, to serve",
          "STEP 1\nTake one chestnut from the pack and set aside. Tip the rest of the chestnuts into a blender or"

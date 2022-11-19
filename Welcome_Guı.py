@@ -11,18 +11,13 @@ def fetch_db():
 
     try:
         cursor.execute("DROP TABLE DISHES")
-
         # Name of Dish, Who upload, Ingredient, Instructions, Number of rates, Avg rate, Type, photo
-
         cursor.execute(
             "CREATE TABLE "
             "Dishes(NameOfDish, PostedBy, Ingredient, Instructions, numOfRates, AvgRate, Type, PhotoLocation)")
-
         cursor.executemany("INSERT INTO Dishes VALUES(?, ?, ?, ?, ?, ?, ?, ?)", data)
         connection.commit()
-
         return connection
-
     except:
         print("Dishes Table already exists")
 
@@ -77,6 +72,8 @@ class Welcome_Gui:
 
 def main():
     root = tk.Tk()
+    root.resizable(False, False)
+    root.iconbitmap('./assets/favicon.ico')
     Welcome_Gui(root)
     root.mainloop()
 
