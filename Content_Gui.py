@@ -107,7 +107,7 @@ class Content_Gui:
         # ================================================== OPTION MENUS =========================================
 
         self.rateTypeVar = tk.StringVar()
-        rating = [1, 2, 3, 4, 5]
+        rating = ['1', '2', '3', '4', '5']
         cb1 = tk.OptionMenu(self.frame_1, self.rateTypeVar, *rating)
         self.rateTypeVar.set("Choose a rate!")
         cb1["menu"].config(bg="#BA8BFF")
@@ -289,15 +289,6 @@ class Content_Gui:
         GUI_Insert(self.master, self.connection)
 
     # ======================================================== SQL ==================================================
-    def displayDishByRate(self):
-        rate = str(self.rateTypeVar.get())
-        if not rate == "Choose a rate!":
-            cursor = self.connection.cursor()
-            res = cursor.execute("SELECT * FROM DISHES WHERE AvgRate = " + rate)
-            self.frame_2.destroy()
-            DisplayDishes(self.master, res.fetchall(), self.connection)
-        else:
-            print("Choose a Rate !!")
 
     def giveRate(self):
         givenrate = self.giveTypeVar.get()
@@ -319,7 +310,15 @@ class Content_Gui:
         else:
             print("Choose a Rate to be given !!")
 
-
+    def displayDishByRate(self):
+        rate = str(self.rateTypeVar.get())
+        if not rate == "Choose a rate!":
+            cursor = self.connection.cursor()
+            res = cursor.execute("SELECT * FROM DISHES WHERE AvgRate = " + "\'" + rate + "\'")
+            self.frame_2.destroy()
+            DisplayDishes(self.master, res.fetchall(), self.connection)
+        else:
+            print("Choose a Rate !!")
 
     def displayAllDishes(self):
         cursor = self.connection.cursor()
@@ -332,7 +331,6 @@ class Content_Gui:
         if not types == "Choose a Type!":
             cursor = self.connection.cursor()
             res = cursor.execute("SELECT * FROM DISHES WHERE Type =" + "\'" + types + "\'")
-            # LIKE " + "`%types%`"
             self.frame_2.destroy()
             DisplayDishes(self.master, res.fetchall(), self.connection)
         else:

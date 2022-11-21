@@ -10,7 +10,7 @@ data = [
          "between six ovenproof ramekins, or put in one baking dish. Top with the remaining mozzarella, "
          "then grill for 3 mins, or until the cheese is melted and golden. Season, scatter over the remaining "
          "basil and serve with green salad.",
-         483, 5, "Main", "gnocchi.PNG"),
+         483, "5", "Main", "gnocchi.PNG"),
         ("Smoked salmon & lemon risotto", "Good Food team",
          "1 onion, finely chopped - 2 tbsp olive oil - 350g risotto rice, such as Arborio - 1 garlic clove, finely"
          " chopped - 1 ½l boiling vegetable stock - 170g pack smoked salmon, three-quarters chopped - 85g "
@@ -24,7 +24,7 @@ data = [
          " lemon zest. Grind in some black pepper, but don’t add salt as the salmon will be salty enough. Leave for"
          " 5 mins to settle, then taste and add a little lemon juice if you like. Serve topped with reserved salmon"
          " (roughly torn) and some rocket.",
-         269, 4, "Main", "salmonlemonrisotto.PNG"),
+         269, "4", "Main", "salmonlemonrisotto.PNG"),
         ("Smoked trout, beetroot & horseradish flatbread", "Good Food team",
          "4 flatbreads - olive oil, for brushing - 2 tbsp creamed horseradish - 2 tbsp crème fraîche - small bunch"
          " dill, ½ chopped, ½ picked into small fronds - squeeze lemon juice, plus a pinch of zest - 3 cooked"
@@ -36,7 +36,7 @@ data = [
          "water to loosen mixture to a drizzling consistency.\nSTEP 3\nTop each flatbread with some beetroot slices"
          " and smoked trout. Drizzle over the horseradish sauce, sprinkle with dill fronds and serve with salad,"
          " if you like.",
-         2, 1, "Main", "beetrootflatbread.PNG"),
+         2, "1", "Main", "beetrootflatbread.PNG"),
 
         ("Easy chocolate fudge cake", "Member recipe by misskay",
          "150ml sunflower oil, plus extra for the tin - 175g self-raising flour - 2 tbsp cocoa  - 1 tsp bicarbonate"
@@ -51,7 +51,7 @@ data = [
          "sieve and beat in the icing sugar and cocoa powder, then add enough of the milk to make the icing fluffy"
          " and spreadable.\nSTEP 5\nSandwich the two cakes together with the butter icing and cover the sides and"
          " the top of the cake with more icing.",
-         939, 5, "Dessert", "fudgecake.PNG"),
+         939, "5", "Dessert", "fudgecake.PNG"),
         ("Vegan millionaire's shortbread", "Cassie Best",
          ">> For the base 150g cash ew nuts - 50g rolled oat - 4 medjool dates, pitted- 50g coconut oil, melted - "
          ">> For the filling 350g pitted medjool dates - 125ml unsweetened almond milk - 25ml maple syrup - "
@@ -69,7 +69,7 @@ data = [
          "in a saucepan until melted. Remove from the heat and whisk in the cocoa and maple syrup until there are"
          " no lumps. Cool for 10 mins, pour over the caramel layer and return to the fridge for at least 3 hrs or "
          "until firmly set. To serve, cut into squares.",
-         36, 4, "Dessert", "veganshortbread.PNG"),
+         36, "4", "Dessert", "veganshortbread.PNG"),
         ("Ginger biscuits", "Liberty Mendez",
          "100g salted butter, cubed - 75g light brown soft sugar - 1 tbsp grated fresh ginger - 100g golden syrup "
          "- 250g self-raising flour - 1½ tbsp ground ginger - 1 tsp bicarbonate of soda - 1 small egg yolk, beaten",
@@ -80,19 +80,19 @@ data = [
          "Roll the dough into 20g balls and put on the prepared baking trays with 3cm between each to allow for "
          "spreading. Bake for 8-10 mins until golden brown. Leave to cool on the trays for a min, then transfer "
          "to a cooling rack to cool completely.",
-         161, 5, "Dessert", "gingerbiscuit.PNG"),
+         161, "5", "Dessert", "gingerbiscuit.PNG"),
 
         ("Super berry smoothie", "Good Food team",
          "450g bag frozen berry - 450g pot fat-free strawberry yogurt - 100ml milk - 25g porridge oat - 2 tsp honey"
          , "Whizz the berries, yogurt and milk together with a stick blender until smooth. Stir through the "
            "porridge oats, then pour into 4 glasses and serve with a drizzle of honey, if you like.",
-         20, 4, "Drink", "berrysmoothie.PNG"),
+         20, "4", "Drink", "berrysmoothie.PNG"),
         ("Peanut butter smoothie", "By Miriam Nice",
          "200ml oat milk - 1 banana, peeled and chopped - 20g peanut butter - 1 tbsp rolled oats - pinch of "
          "cinnamon - pinch of allspice - pinch of nutmeg (optional) - small handful ice cubes",
          "Whizz all the ingredients together in a blender (one suitable for crushing ice) until smooth. Pour into "
          "a tall glass and serve.",
-         20, 3, "Drink", "peanutsmoothie.PNG"),
+         20, "3", "Drink", "peanutsmoothie.PNG"),
 
         ("Miso & butternut soup", "Sara Buenfeld",
          "2 tsp rapeseed oil - 1 large onion, chopped - 400g butternut squash, skin-on, cut into chunks - 2 garlic"
@@ -104,7 +104,7 @@ data = [
          "for 20 mins until the squash is tender.\nSTEP 2\nMeanwhile, steam the kale for 10 mins, then toss"
          " together with the sesame oil, seeds and ginger.\nSTEP 3\nAdd the miso to the soup, then blitz until "
          "smooth using a hand blender. Pour into bowls and top with the sesame kale mix to serve.",
-         87, 5, "Starter", "misosoup.PNG"),
+         87, "5", "Starter", "misosoup.PNG"),
         ("Cauliflower soup", "Esther Clark",
          "1 large cauliflower (1.5kg), cut into florets - ½ tbsp ground cumin - 2 tbsp olive oil, plus extra"
          " for drizzling - 4 thyme sprigs - 1 onion, finely chopped - 1 celery stick, finely chopped - 1 garlic"
@@ -118,7 +118,7 @@ data = [
          " for 10 mins.\nSTEP 3\nBlitz the soup until smooth using a hand blender or food processor. Stir through"
          " the cream and season to taste. Add extra stock if you like your soup a little thinner. Ladle into bowls"
          " and top with the parsley, reserved cauliflower and an extra drizzle of olive oil.",
-         3, 3, "Starter", "cauliflowersoup.PNG"),
+         3, "3", "Starter", "cauliflowersoup.PNG"),
 
         ("Air fryer sweet potato fries", "Samuel Goldsmith",
          "2 sweet potatoes - 1 tsp olive oil - For the seasoning - 1 tsp sweet smoked paprika or other seasonings"
@@ -129,7 +129,7 @@ data = [
          " single layer in your air fryer basket at 180C for around 10-15 mins, until lightly golden, giving a"
          " little shake or toss after 5 mins. Once all the batches have cooked, return the fries to the air fryer,"
          " give it a good shake and cook for a further 1-2 mins to heat through.",
-         4, 2, "Side", "sweetpotatofries.PNG"),
+         4,"2", "Side", "sweetpotatofries.PNG"),
         ("Chestnut hummus", "Barney Desmazery",
          "180g vacuum-packed cooked chestnuts - 1 lemon, juiced - 1 garlic clove - 4 tbsp olive oil - pitta crisps"
          " and vegetable crudités, to serve",
@@ -137,5 +137,5 @@ data = [
          " smoothie maker with the lemon juice, garlic, oil and a little freshly boiled water from the kettle."
          " Season. Blitz to a smooth purée, then spoon into a bowl or spread over four plates.\nSTEP 2\nFinely "
          "grate over the reserved chestnut, then serve with pitta crisps and vegetable crudités.",
-         3, 3, "Side", "chestnuthummus.PNG")
+         3, "3", "Side", "chestnuthummus.PNG")
     ]

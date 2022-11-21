@@ -54,7 +54,7 @@ class DisplayDishes:
 
             dishName_label = tk.Label(self.frame_2,
                                       text=dish[0] + "\n# of Rate: " + str(
-                                          dish[5]) + "\nAverage rate: " + str(dish[6]),
+                                          dish[4]) + "\nAverage rate: " + str(dish[5]),
                                       width=40,
                                       wraplength=350,
                                       anchor="w",
