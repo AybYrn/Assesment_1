@@ -51,7 +51,7 @@ class Welcome_Gui:
                  text="Welcome\n To\n The Cooking Book",
                  bg=bg_color,
                  fg="#2B00FF",
-                 font=("Helvetica", 20, "bold")).pack(side=tk.TOP, pady=15)
+                 font=("Helvetica", 20)).pack(side=tk.TOP, pady=15)
 
         continue_button = tk.Button(self.frame_1,
                                     text="CONTINUE >>",
@@ -64,6 +64,14 @@ class Welcome_Gui:
                                     command=lambda: self.pageContent())
 
         continue_button.pack(side=tk.TOP, pady=15)
+
+        name = tk.Label(self.frame_1,
+                        text="~ Aybuke Yaren ~",
+                        font=("Helvetica", 15, "italic"),
+                        bg=bg_color,
+                        fg="#2B00FF"
+                        )
+        name.pack(side=tk.BOTTOM)
 
     def pageContent(self):
         self.frame_1.destroy()
